@@ -130,3 +130,16 @@ class TestBCValidation(object):
                                incident_flux, scale_factor)
 
         assert 'Incorrect shape' in str(ex.value)
+
+
+class TestSolverLWValidation(object):
+    '''
+    Test the validation of boundary conditions
+    '''
+
+    def test_wrong_downflux_shape(self):
+        '''
+        Test bc validation
+        '''
+        assert True
+
