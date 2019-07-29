@@ -9,4 +9,5 @@ Sphinx==1.8.1
 twine==1.12.1
 numpy>=1.16.0
 cffi>=1.12.3
+pytest-cov
 
