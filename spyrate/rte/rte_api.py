@@ -2,6 +2,7 @@
 This module contains the API definitions needed to compile CFFI wrappers
 '''
 
+
 class RTEAPIDefinition(object):
     '''
     class holding C API definitions
