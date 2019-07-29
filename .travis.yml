@@ -11,6 +11,8 @@ cache:
 env:
     global:
       - TWINE_USERNAME=joy.merwin
+      - FC=gfortran
+      - CC=gcc
 
   #matrix:
   #  include:

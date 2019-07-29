@@ -2,7 +2,7 @@ import os
 from cffi import FFI
 from .rte.rte_api import RTEAPIDefinition
 
-desired_compiler = 'gcc-6'
+desired_compiler = 'gcc'
 rte_library_path = 'spyrate/_lib/librte.a'
 precision = 'double'
 extension_name = "spyrate._rte_wrapper_double_precision"
