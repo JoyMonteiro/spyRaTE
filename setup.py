@@ -20,7 +20,6 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     'cffi>=1.12.3',
     'numpy>=1.16.0'
-    'os'
 ]
 
 test_requirements = [
