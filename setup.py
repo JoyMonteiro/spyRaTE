@@ -27,7 +27,7 @@ test_requirements = [
 ]
 
 os.environ['FC'] = 'gfortran'
-os.environ['FCFLAGS'] = "-ffree-line-length-none -m64 -std=f2003 -march=native -DUSE_CBOOL"
+os.environ['FCFLAGS'] = "-ffree-line-length-0 -m64 -std=f2003 -march=native -DUSE_CBOOL"
 
 
 operating_system = platform.system()
