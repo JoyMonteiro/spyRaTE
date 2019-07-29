@@ -26,6 +26,9 @@ test_requirements = [
     'pytest>=2.9.2'
 ]
 
+os.environ['FC'] = 'gfortran'
+os.environ['FCFLAGS'] = "-ffree-line-length-none -m64 -std=f2003 -march=native -DUSE_CBOOL"
+
 
 operating_system = platform.system()
 compiled_base_dir = 'spyrate/_lib'
