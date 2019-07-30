@@ -60,5 +60,4 @@ ffibuilder.set_source(extension_name,
                       extra_link_args=[os.path.abspath(rte_library_path), '-lgfortran'])
 
 if __name__ == "__main__":
-    dummy = np.zeros(10)
     ffibuilder.compile(verbose=True)
