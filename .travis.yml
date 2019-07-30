@@ -49,8 +49,8 @@ jobs:
       install:
           - python -m pip install -r requirements_dev.txt
           - python -m pip install -U tox
-      deps = codecov>=1.4.0
-      commands = codecov -e TOXENV
+      script:
+          - tox -e ${TOXENV}
     - stage: big tests
       env: TOXENV=py36 SPYRATE_ARCH=Linux
       script:
