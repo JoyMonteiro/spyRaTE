@@ -44,10 +44,6 @@ def build_libraries():
     '''
     Build compiled libraries as part of setuptools build
     '''
-
-    if os.environ.get('READTHEDOCS') == 'True':
-        return
-
     curr_dir = os.getcwd()
     os.chdir(compiled_path)
     os.environ['PWD'] = compiled_path
@@ -64,6 +60,8 @@ class SpyrateBuildExt(native_build_ext):
     '''
 
     def run(self):
+        if os.environ.get('READTHEDOCS') == 'True':
+            return
         build_libraries()
         native_build_ext.run(self)
 
