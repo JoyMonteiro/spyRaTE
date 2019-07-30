@@ -45,8 +45,8 @@ def build_libraries():
     Build compiled libraries as part of setuptools build
     '''
 
-    # if os.environ.get('READTHEDOCS') == 'True':
-    #    return
+    if os.environ.get('READTHEDOCS') == 'True':
+        return
 
     curr_dir = os.getcwd()
     os.chdir(compiled_path)
