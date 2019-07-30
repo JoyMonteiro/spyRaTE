@@ -1,15 +1,5 @@
 import os
 from cffi import FFI
-try:
-    from pip import main as pip_main
-except Exception:
-    from pip._internal import main as pip_main
-try:
-    import numpy as np
-except ImportError:
-    print('Suitable numpy unavailable, installing...')
-    pip_main(['install', 'numpy'])
-    import numpy as np
 from .rte.rte_api import RTEAPIDefinition
 
 desired_compiler = 'gcc'
