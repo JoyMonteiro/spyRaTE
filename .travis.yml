@@ -45,11 +45,12 @@ jobs:
           - tox -e ${TOXENV}
     - stage: big tests
       env: TOXENV=cov SPYRATE_ARCH=Linux
+      passenv: CI TRAVIS TRAVIS_* CODECOV_*
       install:
           - python -m pip install -r requirements_dev.txt
           - python -m pip install -U tox
-      script:
-          - tox -e ${TOXENV}
+      deps = codecov>=1.4.0
+      commands = codecov -e TOXENV
     - stage: big tests
       env: TOXENV=py36 SPYRATE_ARCH=Linux
       script:
