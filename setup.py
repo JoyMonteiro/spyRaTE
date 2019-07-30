@@ -41,9 +41,12 @@ ffi_internal_builder = importlib.import_module('spyrate.__build')
 
 # Create a custom build class to build libraries, and patch cython extensions
 def build_libraries():
+    '''
+    Build compiled libraries as part of setuptools build
+    '''
 
-    if os.environ.get('READTHEDOCS') == 'True':
-        return
+    # if os.environ.get('READTHEDOCS') == 'True':
+    #    return
 
     curr_dir = os.getcwd()
     os.chdir(compiled_path)
@@ -56,6 +59,9 @@ def build_libraries():
 
 # Custom build class
 class SpyrateBuildExt(native_build_ext):
+    '''
+    custom build class
+    '''
 
     def run(self):
         build_libraries()
@@ -64,6 +70,9 @@ class SpyrateBuildExt(native_build_ext):
 
 # Custom bdist_wheel class
 class SpyrateBdistWheel(native_bdist_wheel):
+    '''
+    custom wheel build class
+    '''
 
     def run(self):
         self.run_command('build')

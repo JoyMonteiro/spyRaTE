@@ -1,7 +1,16 @@
+version: 2
+
+formats: all
+
+conda:
+    environment: environment.yml
+
 build:
     image: latest
 python:
   version: 3.6
   install:
-    - requirements: requirements.txt
-  setup_py_install: True
+    - method: setuptools
+    - path: .
+    - requirements: requirements_dev.txt
+  system_packages: True

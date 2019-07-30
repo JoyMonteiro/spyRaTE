@@ -1,0 +1,11 @@
+name: spyrate
+
+channels:
+    - conda-forge
+    - anaconda
+
+dependencies:
+    - numpy
+    - cffi
+    - gcc
+    - gfortran_linux-64
