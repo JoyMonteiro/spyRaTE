@@ -65,6 +65,7 @@ jobs:
       script:
         - |
             if [[ $TRAVIS_TAG ]]; then
+            python -m pip install -r requirements_dev.txt
             python -m pip install cibuildwheel
             cibuildwheel --output-dir wheelhouse
             python -m pip install twine
@@ -75,6 +76,7 @@ jobs:
       script:
         - |
             if [[ $TRAVIS_TAG ]]; then
+            python -m pip install -r requirements_dev.txt
             python -m pip install cibuildwheel
             cibuildwheel --output-dir wheelhouse
             python -m pip install twine
