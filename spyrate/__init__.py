@@ -4,7 +4,7 @@
 
 __author__ = """Joy Merwin Monteiro"""
 __email__ = 'joy.merwin@gmail.com'
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 
 from .rte.rte_interface import CompiledRTEInterface, UserCompiledRTEInterface
 from .spyrate import Spyrate
