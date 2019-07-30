@@ -1,5 +1,15 @@
 import os
 from cffi import FFI
+try:
+    from pip import main as pip_main
+except Exception:
+    from pip._internal import main as pip_main
+try:
+    import numpy as np
+except ImportError:
+    print('Suitable numpy unavailable, installing...')
+    pip_main(['install', 'numpy'])
+    import numpy as np
 from .rte.rte_api import RTEAPIDefinition
 
 desired_compiler = 'gcc'
@@ -60,4 +70,5 @@ ffibuilder.set_source(extension_name,
                       extra_link_args=[os.path.abspath(rte_library_path), '-lgfortran'])
 
 if __name__ == "__main__":
+    dummy = np.zeros(10)
     ffibuilder.compile(verbose=True)
